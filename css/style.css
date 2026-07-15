@@ -562,6 +562,12 @@ body {
     .section3 h1,
     .section4 h1 {
         margin-top: 2rem;
+        font-size:2.5rem;
+    }
+    .section5 h1,
+    .section6 h1{
+        margin-top: 2rem;
+        font-size:2.5rem;
     }
 
 
