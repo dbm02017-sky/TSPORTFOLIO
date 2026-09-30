@@ -496,14 +496,21 @@ html {
 
 
 @media (max-width: 768px) {
-    /* 2. 모든 요소 기본 넘침 방지 및 min-width 해제 */
+    /* 1. [가장 중요] 최상위 레이어 가로 스크롤 원천 차단 */
+    html, body {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        position: relative !important;
+    }
+
+    /* 2. 모든 요소 기본 넘침 방지 및 규격화 */
     *, *::before, *::after {
         max-width: 100% !important;
         box-sizing: border-box !important;
-        min-width: 0 !important;
     }
 
-    /* 3. 전체 섹션 높이 및 여백 설정 */
+    /* 3. 전체 섹션 높이 및 여백 설정 (가로 패딩 포함 너비 고정) */
     section,
     .scene,
     .scene1,
@@ -519,7 +526,9 @@ html {
         height: auto !important;
         padding: 3rem 1rem !important;
         width: 100% !important;
+        max-width: 100% !important;
         overflow-x: hidden !important;
+        box-sizing: border-box !important;
     }
 
     /* 4. 메인 Scene 타이틀 */
@@ -616,7 +625,6 @@ html {
         display: flex !important;
         flex-direction: column !important;
         gap: 0.8rem !important;
-        
         background: none !important;
         background-color: transparent !important;
         border: none !important;
@@ -646,18 +654,16 @@ html {
         height: auto !important;
         padding: 0.8rem 1rem !important;
         margin: 0 !important;
-        
         background-color: #A6DAF4 !important;
         border: 1px solid lightblue !important;
         box-shadow: 2px 2px 3px rgba(0,0,0,0.4) !important;
-        
         writing-mode: horizontal-tb !important;
         text-align: center !important;
         font-size: 1rem !important;
         word-break: keep-all !important;
     }
 
-    /* 9. [수정완료] 비디오 및 이미지 중앙 정렬 & 너비 균일화 */
+    /* 9. 비디오 및 이미지 중앙 정렬 & 너비 균일화 */
     .section5,
     .section6 {
         display: flex !important;
@@ -724,6 +730,7 @@ html {
         gap: 0.8rem !important;
         text-align: center !important;
         width: 100% !important;
+        box-sizing: border-box !important;
     }
 }
     .gotop {
