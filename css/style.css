@@ -191,9 +191,9 @@ body {
 }
 
 .scene2 ul li {
-    margin: 10px 5px;
-    padding: 10px 20px;
-    font-size: 1.4rem;
+    margin: 10px 10px;
+    padding: 15px 20px;
+    font-size: 1.3rem;
     border: 2px solid lightblue;
     box-shadow: 3px 3px 3px black;
     background-color: #A6DAF4;
@@ -358,12 +358,65 @@ body {
 .section5 h1 {
     font-size: 4rem;
     margin-bottom: 3rem;
-    margin-left: 3rem;
+    margin-right: 72rem;
+}
+.video-container {
+    display: flex;
+    justify-content: center; /* 중앙 정렬 */
+    align-items: flex-start; /* 상단 기준 정렬 */
+    gap: 30px;               /* 두 영상 세트 사이의 간격 */
 }
 
-.section5 img {
-    margin-top: 5rem;
-    margin-left: 3rem;
+/* 각 비디오 세트: 제목과 영상 세로 정렬 */
+.video-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;     /* 제목과 영상을 가운데 정렬 */
+}
+
+/* 제목 스타일 (선택사항) */
+.video-item h2,
+.video-item h3 {
+    margin-bottom: 10px;     /* 제목과 영상 사이의 간격 */
+    font-size: 1.2rem;       /* 글자 크기 조정 */
+}
+
+/* 비디오 반응형 스타일 */
+.video-item video {
+    max-width: 100%;
+    height: auto;
+}
+/* .section5 h2 {
+    font-size: 3rem;
+}
+
+.section5 h3 {
+    font-size: 3rem;
+    margin-bottom:1rem;
+}
+.section5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.section5  video{
+   margin:0 1.5rem;
+   margin-top:3rem;
+    
+}
+
+/* 비디오들을 감싸는 영역 flex화 */
+.section5 .img, 
+.section5 > video {
+    display: inline-block;
+    vertical-align: middle;
+   
+} */
+
+/* .section5 img {
+    margin-top: 3rem;
     margin-left: 3rem;
     width: 50%;
     height: 60%;
@@ -376,7 +429,8 @@ body {
     margin-top: 3.5rem;
     border: 3px groove black;
     object-fit: cover;
-}
+    margin-right: 3rem;
+} */
 
 .section6 {
     width: 100%;
@@ -392,10 +446,10 @@ body {
 
 
 .section6 img {
-    margin-top: 5rem;
+    margin-top: 4rem;
     margin-left: 3rem;
-    width: 50%;
-    height: 60%;
+    width: 47%;
+    height: 55%;
     border: 3px groove black;
 }
 
@@ -428,10 +482,12 @@ body {
     transform: rotate(45deg);
 }
 
-@media screen and (max-width: 768px) {
-
+@media (max-width: 768px) {
+    /* 1. 전체 높이 고정 해제 */
+    section,
     .scene,
     .scene1,
+    .scene2,
     .section,
     .section1,
     .section2,
@@ -439,147 +495,176 @@ body {
     .section4,
     .section5,
     .section6 {
-        height: auto;
-        min-height: 100vh;
-        padding: 2rem 1rem;
+        min-height: auto !important;
+        height: auto !important;
+        padding: 3rem 1.2rem !important;
     }
 
-    main {
-        overflow: hidden;
+    /* 2. 메인 Scene 여백 & 타이틀 */
+    .scene {
+        padding-top: 5rem !important;
+        padding-bottom: 5rem !important;
     }
 
-    .inner h1 {
-        padding: 5rem;
-
+    .scene .inner {
+        gap: 4rem !important;
     }
 
-    .scene h3 {
-        font-family: 'SchoolSafeBoardMarker';
-        text-align: right;
-        font-size: 2rem;
+    .scene h1 { 
+        font-size: 4.5rem !important; 
+        line-height: 1.2 !important;
+        margin-top: 1rem !important;
+    }
+    
+    .scene h2, .scene h3 { 
+        font-size: 1.5rem !important; 
+        line-height: 1.5 !important;
     }
 
-    .scene1 div div img {
-        margin: 0;
+    /* 3. Profile 제목과 증명사진 정렬 */
+    .scene1 {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
     }
 
-    section h1 {
-        font-size: 2.5rem;
-        margin-left: -2rem;
-        margin-bottom: 2rem;
-        text-align: center;
+    .scene1 h2 {
+        text-align: center !important;
+        width: 100% !important;
+        margin-top: 0 !important;
+        margin-bottom: 1.2rem !important;
+        font-size: 2.5rem !important;
     }
 
-    .scene h1 {
-        font-size: 2.5rem;
+    .scene1 > div {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+        align-items: center !important;
+        width: 100% !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
     }
 
-    .scene h2 {
-        font-size: 1.5rem;
+    .scene1 div div img,
+    .scene1 img {
+        width: 100% !important;
+        max-width: 190px !important;
+        height: auto !important;
+        margin: 0 auto !important;
+        display: block !important;
     }
 
-    .scene2 h2 {
-        font-size: 2.5rem;
+    /* 4. section5 h1 세로 출력 방지 */
+    section h1,
+    .section5 h1,
+    .section6 h1 {
+        font-size: 2.2rem !important;
+        margin: 0 0 2rem 0 !important;
+        text-align: center !important;
+        writing-mode: horizontal-tb !important;
+        white-space: nowrap !important;
+        width: 100% !important;
+        display: block !important;
     }
 
-    .scene2 h3 {
-        font-size: 1.8rem;
+    /* 5. [핵심] About, Education, Certificate, Skill 감싸는 부모 박스 완전 제거 */
+    .jump,
+    .about,
+    .education,
+    .certificate,
+    .skill,
+    .scene2 ul,
+    .jump > div,
+    .scene1 div.about,
+    .scene1 div.education,
+    .scene1 div.certificate,
+    .scene1 div.skill,
+    div[class*="about"],
+    div[class*="education"],
+    div[class*="certificate"],
+    div[class*="skill"] {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.8rem !important;
+        
+        /* 외부 감싸는 큰 박스의 모든 스타일 삭제 */
+        background: none !important;
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 1.5rem 0 !important;
     }
 
-    .scene1>div {
-        flex-direction: column;
-        gap: 2rem;
+    /* 감싸는 요소 내부의 제목(About, Education 등) 위치 잡기 */
+    .about h2, .about h3,
+    .education h2, .education h3,
+    .certificate h2, .certificate h3,
+    .skill h2, .skill h3,
+    .jump h2, .jump h3 {
+        text-align: center !important;
+        margin-bottom: 0.5rem !important;
+        font-size: 1.8rem !important;
     }
 
-    .scene1 div div img {
-        width: 100%;
-        height: auto;
-    }
-
-    .jump {
-        width: 100%;
-        flex-direction: column;
-    }
-
-    .jump>div {
-        width: 100%;
-    }
-
-    .about div,
-    .education div,
-    .certificate div,
-    .skill div {
-        margin: 0.5rem 0;
-    }
-
-
-    .scene2 {
-        padding: 2rem 1rem;
-        margin-top: 2rem;
-    }
-
-    .scene2 ul {
-        flex-direction: column;
-        padding: 1rem 0;
-    }
-
+    /* 6. 내용이 들어있는 자식 div(알맹이 박스)만 배경 유지 */
+    .about > div,
+    .education > div,
+    .certificate > div,
+    .skill > div,
+    .jump > div > div,
     .scene2 ul li {
-        text-align: center;
-        margin: 5px 0;
+        width: 100% !important;
+        height: auto !important;
+        box-sizing: border-box !important;
+        padding: 0.8rem 1rem !important;
+        margin: 0 !important;
+        
+        background-color: #A6DAF4 !important;
+        border: 1px solid lightblue !important;
+        box-shadow: 2px 2px 3px rgba(0,0,0,0.4) !important;
+        
+        writing-mode: horizontal-tb !important;
+        text-align: center !important;
+        font-size: 1rem !important;
+        word-break: keep-all !important;
     }
 
-    .scene2 ul li:hover {
-        background-color: blue;
-        transform: scale(1.1);
-        cursor: url("../images/고양이3.png")2 2, auto;
+    /* 7. 비디오 & 이미지 1열 정렬 */
+    .video-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 2rem !important;
+    }
 
+    .video-item {
+        width: 100% !important;
+    }
+
+    .section img, .section video,
+    .section1 img, .section1 video,
+    .section2 img, .section2 video,
+    .section3 img, .section3 video,
+    .section4 img, .section4 video,
+    .section6 img, .section6 video {
+        width: 100% !important;
+        height: auto !important;
+        margin: 0.8rem 0 !important;
     }
 
     .space {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem 1rem;
-        font-size: 1.8rem;
-        text-align: center;
+        padding: 1.5rem 1rem !important;
+        font-size: 1.4rem !important;
+        flex-direction: column !important;
+        gap: 0.8rem !important;
+        text-align: center !important;
     }
-
-    .section img,
-    .section1 img,
-    .section2 img,
-    .section3 img,
-    .section4 img,
-    .section5 img,
-    .section6 img,
-    .section video,
-    .section1 video,
-    .section2 video,
-    .section3 video,
-    .section4 video,
-    .section5 video,
-    .section6 video {
-        width: 100%;
-        height: auto;
-        margin-left: 0 !important;
-        margin-top: 1rem !important;
-        margin-bottom: 1rem !important;
-    }
-
-    .section2 h1,
-    .section3 h1,
-    .section4 h1 {
-        margin-top: 2rem;
-        font-size:2.5rem;
-    }
-    .section5 h1,
-    .section6 h1{
-        margin-top: 2rem;
-        font-size:2.5rem;
-    }
-
-
-
+}
     .gotop {
         right: 3rem;
         bottom: 2rem;
     }
-}
