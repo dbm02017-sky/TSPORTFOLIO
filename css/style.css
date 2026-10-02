@@ -60,7 +60,7 @@ body {
     min-height: 100%;
     overflow: visible !important; /* body 내부 추가 스크롤바 원천 차단 */
     position: relative;
-    background: url('../images/배경.jpg') no-repeat center/cover fixed;
+    background: url('../images/배경4.jpg') no-repeat center/cover fixed;
 }
 html {
     width: 100%;
@@ -157,6 +157,10 @@ html {
 .scene1 h2 {
     text-align: center;
     margin-top: 5rem;
+    margin-left:8rem;
+    background-color: skyblue;
+    box-shadow: 3px 3px 3px black;
+    width: 50%;
 }
 
 .scene1 h1 {
@@ -214,7 +218,7 @@ html {
 }
 
 .scene2 ul li:hover {
-    background-color: blue;
+    background-color: skyblue;
     transform: scale(1.3);
     cursor: url("../images/고양이3.png")2 2, auto;
 
@@ -226,7 +230,8 @@ html {
     justify-content: space-between;
     padding: 5rem 9rem;
     font-size: 3rem;
-    background-color: skyblue;
+    background-color: #A6DAF4;
+    box-shadow: 3px 3px 3px black;
 }
 
 
@@ -377,6 +382,7 @@ html {
     justify-content: center; /* 중앙 정렬 */
     align-items: flex-start; /* 상단 기준 정렬 */
     gap: 30px;               /* 두 영상 세트 사이의 간격 */
+
 }
 
 /* 각 비디오 세트: 제목과 영상 세로 정렬 */
@@ -567,7 +573,8 @@ html {
         width: 100% !important;
         margin-top: 0 !important;
         margin-bottom: 1.2rem !important;
-        font-size: 2.2rem !important;
+        font-size: 1rem !important;
+        margin-left:0rem;
     }
 
     .scene1 > div {
