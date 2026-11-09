@@ -233,6 +233,31 @@ html {
     background-color: #A6DAF4;
     box-shadow: 3px 3px 3px black;
 }
+.section, .section1, .section2, .section3, .section4, .section6 {
+    width: 100%;
+    min-height: 100vh; /* height 대신 min-height 사용 */
+    height: auto;
+    padding: 3rem 2rem;
+    box-sizing: border-box;
+}
+
+.section h1, .section1 h1, .section2 h1, .section3 h1, .section4 h1, .section6 h1 {
+    width: 100%;
+    margin-bottom: 2rem;
+    margin-left: 0;             /* 고정 마진 제거 */
+    text-align: left;
+}
+.section img, .section1 img, .section2 img, .section3 img, .section4 img, .section6 img,
+.section video, .section1 video, .section2 video, .section3 video, .section4 video, .section6 video {
+    width: 48%;                  /* 나란히 배치될 때 각각 약 48% 차지 */
+    max-width: 100%;             /* 넘침 방지 */
+    height: auto;                /* 비율 유지 */
+    aspect-ratio: 16 / 9;        /* 이미지와 영상의 비율을 16:9로 동일하게 고정 */
+    object-fit: cover;
+    margin: 0 !important;        /* 기존 제각각 적용된 margin 제거 */
+    border: 3px groove black;
+    box-sizing: border-box;
+}
 
 
 .section {
@@ -261,7 +286,7 @@ html {
 
 .section1 {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
 
 
 }
@@ -284,7 +309,7 @@ html {
 
 .section2 {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
 
 }
 
@@ -312,7 +337,7 @@ html {
 
 .section3 {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
 
 }
 
@@ -340,7 +365,7 @@ html {
 
 .section4 {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
 
 }
 
@@ -368,7 +393,7 @@ html {
 
 .section5 {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
 
 }
 
@@ -452,7 +477,7 @@ html {
 
 .section6 {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
 
 }
 
